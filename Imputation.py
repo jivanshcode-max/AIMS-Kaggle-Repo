@@ -1,6 +1,5 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.impute import SimpleImputer
 from sklearn.ensemble import RandomForestRegressor
 
 # Read the data
@@ -22,7 +21,7 @@ category_cols = [col for col in X.columns if X[col].dtype == "object"]
 
 # We'll fill missing values with mean for numerical columns
 for col in numeric_cols:
-        X[col].fillna(X[col].mean(), inplace=True)
+    X[col].fillna(X[col].mean(), inplace=True)
 
 # We'll fill missing values with mode for categorical columns
 for col in category_cols:
